@@ -1,0 +1,3 @@
+cgal/test-demo/*
+!CMakeLists.txt
+!min.cpp
