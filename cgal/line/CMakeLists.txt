@@ -21,12 +21,12 @@ if ( CGAL_FOUND AND CGAL_Qt5_FOUND AND Qt5_FOUND )
   add_definitions(-DQT_NO_KEYWORDS)
   set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-  add_executable  ( plot plot.cpp  ${CGAL_Qt5_RESOURCE_FILES} ${CGAL_Qt5_MOC_FILES})
+  add_executable  ( line line.cpp  ${CGAL_Qt5_RESOURCE_FILES} ${CGAL_Qt5_MOC_FILES})
 
-  add_to_cached_list( CGAL_EXECUTABLE_TARGETS plot )
+  add_to_cached_list( CGAL_EXECUTABLE_TARGETS line )
 
   # add Qt and CGAL libraries
-  target_link_libraries( plot CGAL::CGAL CGAL::CGAL_Qt5 Qt5::Gui )
+  target_link_libraries( line CGAL::CGAL CGAL::CGAL_Qt5 Qt5::Gui )
 
   include(${CGAL_MODULES_DIR}/CGAL_add_test.cmake)
   cgal_add_compilation_test(min)

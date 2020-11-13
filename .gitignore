@@ -1,10 +1,3 @@
-cgal/test-demo/*
-!CMakeLists.txt
-!min.cpp
-
-cgal/plot-points/*
-!CMakeLists.txt
-!plot.cpp
-!input.txt
-
+**/build/*
+!**/build/.gitkeep
 .vscode/
