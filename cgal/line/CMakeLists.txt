@@ -29,7 +29,7 @@ if ( CGAL_FOUND AND CGAL_Qt5_FOUND AND Qt5_FOUND )
   target_link_libraries( line CGAL::CGAL CGAL::CGAL_Qt5 Qt5::Gui )
 
   include(${CGAL_MODULES_DIR}/CGAL_add_test.cmake)
-  cgal_add_compilation_test(min)
+  cgal_add_compilation_test(line)
 else()
 
   message(STATUS "ERROR: This demo requires CGAL and Qt5, and will not be compiled.")
