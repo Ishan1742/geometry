@@ -26,26 +26,26 @@ void display()
 
     glBegin(GL_QUADS);
     glColor3f(1, 0, 0);
-    glVertex3f(x[0], y[0], z[0]);
-    glVertex3f(x[1], y[1], z[1]);
-    glVertex3f(x[2], y[2], z[2]);
-    glVertex3f(x[3], y[3], z[3]);
+    for (int i = 0; i < 4; i++)
+    {
+        glVertex3f(x[i], y[i], z[i]);
+    }
     glEnd();
 
     glBegin(GL_QUADS);
     glColor3f(0, 1, 0);
-    glVertex3f(x[4], y[4], z[4]);
-    glVertex3f(x[5], y[5], z[5]);
-    glVertex3f(x[6], y[6], z[6]);
-    glVertex3f(x[7], y[7], z[7]);
+    for (int i = 4; i < 8; i++)
+    {
+        glVertex3f(x[i], y[i], z[i]);
+    }
     glEnd();
 
     glBegin(GL_QUADS);
     glColor3f(0, 0, 1);
-    glVertex3f(x[8], y[8], z[8]);
-    glVertex3f(x[9], y[9], z[9]);
-    glVertex3f(x[10], y[10], z[10]);
-    glVertex3f(x[11], y[11], z[11]);
+    for (int i = 8; i < 12; i++)
+    {
+        glVertex3f(x[i], y[i], z[i]);
+    }
     glEnd();
 
     glFlush();
