@@ -49,6 +49,8 @@ void mouseMoved(int mousex, int mousey)
         GLint y = 500 - mousey; // screenheight is fixed
         line.push_back(std::make_pair(x, y));
     }
+    glEnable(GL_LINE_SMOOTH);
+    glLineWidth(3.0f);
     glBegin(GL_LINE_STRIP);
     for (auto &point : line)
     {
