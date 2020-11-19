@@ -14,6 +14,18 @@
 typedef CGAL::Cartesian<double> Kernel;
 typedef Kernel::Point_2 Point_2;
 
+double calculateArea(const std::vector<Point_2> &points)
+{
+    double res = 0;
+    for (int i = 0; i < points.size(); i++)
+    {
+        Point_2 p = i ? points[i - 1] : points.back();
+        Point_2 q = points[i];
+        res += (p.x() - q.x()) * (p.y() + q.y());
+    }
+    return std::abs(res) / 2;
+}
+
 int main(int argc, char **argv)
 {
     std::fstream file("../input.txt", std::ios::in);
@@ -50,7 +62,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    double area = CGAL::area(points[0], points[1], points[2]);
+    double area = calculateArea(points);
 
     std::string str = "Area is: " + std::to_string(abs(area)) + "\n";
 
