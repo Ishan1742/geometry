@@ -21,18 +21,17 @@ if ( CGAL_FOUND AND CGAL_Qt5_FOUND AND Qt5_FOUND )
   add_definitions(-DQT_NO_KEYWORDS)
   set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-  add_executable  ( min min.cpp  ${CGAL_Qt5_RESOURCE_FILES} ${CGAL_Qt5_MOC_FILES})
+  add_executable  ( triangulation triangulation.cpp  ${CGAL_Qt5_RESOURCE_FILES} ${CGAL_Qt5_MOC_FILES})
 
-  add_to_cached_list( CGAL_EXECUTABLE_TARGETS min )
+  add_to_cached_list( CGAL_EXECUTABLE_TARGETS triangulation )
 
   # add Qt and CGAL libraries
-  target_link_libraries( min PRIVATE
-    CGAL::CGAL CGAL::CGAL_Qt5 Qt5::Gui )
+  target_link_libraries( triangulation CGAL::CGAL CGAL::CGAL_Qt5 Qt5::Gui )
 
   include(${CGAL_MODULES_DIR}/CGAL_add_test.cmake)
-  cgal_add_compilation_test(min)
+  cgal_add_compilation_test(triangulation)
 else()
 
-  message(STATUS "NOTICE: This demo requires CGAL and Qt5, and will not be compiled.")
+  message(STATUS "ERROR: This demo requires CGAL and Qt5, and will not be compiled.")
 
 endif()
