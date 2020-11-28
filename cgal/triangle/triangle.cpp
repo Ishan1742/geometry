@@ -16,13 +16,10 @@ typedef Kernel::Point_2 Point_2;
 
 double calculateArea(const std::vector<Point_2> &points)
 {
-    double res = 0;
-    for (int i = 0; i < points.size(); i++)
-    {
-        Point_2 p = i ? points[i - 1] : points.back();
-        Point_2 q = points[i];
-        res += (p.x() - q.x()) * (p.y() + q.y());
-    }
+    Point_2 a = points[0];
+    Point_2 b = points[1];
+    Point_2 c = points[2];
+    double res = (b.x() - a.x()) * (c.y() - a.y()) - (c.x() - a.x()) * (b.y() - a.y());
     return std::abs(res) / 2;
 }
 
